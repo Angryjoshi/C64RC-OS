@@ -1,44 +1,93 @@
 <Project Sdk="Microsoft.Net.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
-
   <PropertyGroup>
     <BinFormat>elf</BinFormat>
-    <Profile>VMware</Profile>
-    <DebugEnabled>true</DebugEnabled>
+    <Profile>ISO</Profile>
+    <DebugEnabled>False</DebugEnabled>
     <DebugMode>Source</DebugMode>
     <TraceMode>User</TraceMode>
     <EnableGDB>False</EnableGDB>
     <StartCosmosGDB>false</StartCosmosGDB>
     <VMWareEdition>Player</VMWareEdition>
     <OutputPath>bin\Debug\</OutputPath>
-    <Description>Use VMware Player or Workstation to deploy and debug.</Description>
+    <Description>Creates a bootable ISO image which can be burned to a DVD. After running the selected project, an explorer window will open containing the ISO file. The ISO file can then be burned to a CD or DVD and used to boot a physical or virtual system.</Description>
     <Deployment>ISO</Deployment>
-    <Launch>VMware</Launch>
+    <Launch>None</Launch>
     <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
+    <PxeInterface>192.168.0.10</PxeInterface>
+    <VMware_Description>Use VMware Player or Workstation to deploy and debug.</VMware_Description>
+    <VMware_Deployment>ISO</VMware_Deployment>
+    <VMware_Launch>VMware</VMware_Launch>
+    <VMware_DebugEnabled>true</VMware_DebugEnabled>
+    <VMware_DebugMode>Source</VMware_DebugMode>
+    <VMware_VisualStudioDebugPort>Pipe: Cosmos\Serial</VMware_VisualStudioDebugPort>
+    <VMware_PxeInterface>192.168.0.10</VMware_PxeInterface>
+    <VMware_VMwareEdition>Player</VMware_VMwareEdition>
+    <VMware_OutputPath>bin\Debug\net462\</VMware_OutputPath>
+    <VMware_EnableGDB>False</VMware_EnableGDB>
+    <VMware_StartCosmosGDB>false</VMware_StartCosmosGDB>
+    <ISO_Description>Creates a bootable ISO image which can be burned to a DVD. After running the selected project, an explorer window will open containing the ISO file. The ISO file can then be burned to a CD or DVD and used to boot a physical or virtual system.</ISO_Description>
+    <ISO_Deployment>ISO</ISO_Deployment>
+    <ISO_Launch>None</ISO_Launch>
+    <ISO_DebugEnabled>False</ISO_DebugEnabled>
+    <ISO_DebugMode>Source</ISO_DebugMode>
+    <ISO_VisualStudioDebugPort>Pipe: Cosmos\Serial</ISO_VisualStudioDebugPort>
+    <ISO_PxeInterface>192.168.0.10</ISO_PxeInterface>
+    <ISO_VMwareEdition>Player</ISO_VMwareEdition>
+    <ISO_OutputPath>bin\Debug\</ISO_OutputPath>
+    <ISO_EnableGDB>False</ISO_EnableGDB>
+    <ISO_StartCosmosGDB>false</ISO_StartCosmosGDB>
+    <IntelEdison_Description>Connect to Intel Edison device to deploy and debug.</IntelEdison_Description>
+    <IntelEdison_Deployment>BinaryImage</IntelEdison_Deployment>
+    <IntelEdison_Launch>IntelEdison</IntelEdison_Launch>
+    <IntelEdison_DebugEnabled>False</IntelEdison_DebugEnabled>
+    <IntelEdison_DebugMode>Source</IntelEdison_DebugMode>
+    <IntelEdison_VisualStudioDebugPort>Pipe: Cosmos\Serial</IntelEdison_VisualStudioDebugPort>
+    <IntelEdison_PxeInterface>192.168.0.10</IntelEdison_PxeInterface>
+    <IntelEdison_VMwareEdition>Player</IntelEdison_VMwareEdition>
+    <IntelEdison_OutputPath>bin\Debug\</IntelEdison_OutputPath>
+    <IntelEdison_EnableGDB>False</IntelEdison_EnableGDB>
+    <IntelEdison_StartCosmosGDB>false</IntelEdison_StartCosmosGDB>
+    <HyperV_Description>Use Hyper-V to deploy and debug.</HyperV_Description>
+    <HyperV_Deployment>ISO</HyperV_Deployment>
+    <HyperV_Launch>HyperV</HyperV_Launch>
+    <HyperV_DebugEnabled>False</HyperV_DebugEnabled>
+    <HyperV_DebugMode>Source</HyperV_DebugMode>
+    <HyperV_VisualStudioDebugPort>Pipe: CosmosSerial</HyperV_VisualStudioDebugPort>
+    <HyperV_PxeInterface>192.168.0.10</HyperV_PxeInterface>
+    <HyperV_VMwareEdition>Player</HyperV_VMwareEdition>
+    <HyperV_OutputPath>bin\Debug\</HyperV_OutputPath>
+    <HyperV_EnableGDB>False</HyperV_EnableGDB>
+    <HyperV_StartCosmosGDB>false</HyperV_StartCosmosGDB>
+    <Bochs_Description>Use Bochs emulator to deploy and debug.</Bochs_Description>
+    <Bochs_Deployment>ISO</Bochs_Deployment>
+    <Bochs_Launch>Bochs</Bochs_Launch>
+    <Bochs_DebugEnabled>False</Bochs_DebugEnabled>
+    <Bochs_DebugMode>Source</Bochs_DebugMode>
+    <Bochs_VisualStudioDebugPort>Pipe: Cosmos\Serial</Bochs_VisualStudioDebugPort>
+    <Bochs_PxeInterface>192.168.0.10</Bochs_PxeInterface>
+    <Bochs_VMwareEdition>Player</Bochs_VMwareEdition>
+    <Bochs_OutputPath>bin\Debug\</Bochs_OutputPath>
+    <Bochs_EnableGDB>False</Bochs_EnableGDB>
+    <Bochs_StartCosmosGDB>false</Bochs_StartCosmosGDB>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="*" />
     <Compile Remove="*" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include=".\C64RCOS.csproj">
       <Name>C64RCOS</Name>
       <Project>{5b4448cd-9958-446a-b597-4258c9b1ce3b}</Project>
     </ProjectReference>
   </ItemGroup>
-
   <ItemGroup>
     <Reference Include="Cosmos.Core.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
     <Reference Include="Cosmos.Core.Plugs.Asm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
     <Reference Include="Cosmos.Debug.Kernel.Plugs.Asm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
     <Reference Include="Cosmos.System.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
   </ItemGroup>
-
   <Import Project="$(AppData)\Cosmos User Kit\Build\VSIP\Cosmos.targets" />
-
 </Project>
