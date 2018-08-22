@@ -24,7 +24,21 @@ namespace C64RCOS
             {
                 Console.WriteLine("Hello, World!");
             }
+            else if(input == "print")
+            {
+                Print();
+            }
+            else
+            {
+                Console.WriteLine("Error: Unknown Command");
+            }
+        }
 
+        static void Print()
+        {
+            Console.WriteLine("What would you like to print?");
+            var input = Console.ReadLine();
+            Console.WriteLine(input);
         }
     }
 }

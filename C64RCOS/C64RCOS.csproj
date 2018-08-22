@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.5</TargetFramework>
     <ProjectGuid>{5b4448cd-9958-446a-b597-4258c9b1ce3b}</ProjectGuid>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
